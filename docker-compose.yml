@@ -1,0 +1,20 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hono-contact-api
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+    volumes:
+      # Mount folder project lokal ke /app di container
+      - .:/app
+      # Pertahankan node_modules dari dalam container agar tidak tertimpa oleh lokal
+      - /app/node_modules
+    # Jalankan dev script Bun (dengan --watch) untuk auto-reload
+    command: bun run dev
+    restart: unless-stopped
+
