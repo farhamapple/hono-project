@@ -1,0 +1,28 @@
+# Dependency directories
+node_modules/
+
+# Bun output & cache
+dist/
+.bun/
+
+# SQLite database files (dan file journal/WAL-nya)
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+data/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs / Core Dumps
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun-debug.log*
+core
+
+# IDEs
+.vscode/
+.idea/
